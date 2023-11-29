@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Providers/Authprovider";
 import Swal from "sweetalert2";
 import Avatar from "../../../Avatar/Avatar";
+import useRole from "../../../Hooks/useRole";
 
 
 const Navbar = () => {
     const {user, logOut}= useContext(AuthContext)
+    const [role] = useRole()
+    console.log(role)
     const handleLogout = () =>{
         logOut()
         .then(()=>{
@@ -57,7 +60,12 @@ const Navbar = () => {
                         <li className="pl-4">
                             {user && user.displayName}
                         </li>
-                        <li><Link>Dashboard</Link></li>
+                        <li>
+                            {role === 'admin' && <Link to="/dashboard/admin">Dashboard</Link>}
+                            {role === 'teacher' && <Link to="/dashboard/teacher">Dashboard</Link>}
+                            {role === 'student' && <Link to="/dashboard/student">Dashboard</Link>}
+                            {role === null && <Link to="/dashboard/student">Dashboard</Link>}
+                        </li>
                         <li><button onClick={handleLogout}>Logout</button></li>
                     </ul>
                 </div>
