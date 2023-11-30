@@ -21,6 +21,10 @@ import MyClass from "../Dashboard/TeacherDashboard/MyClass";
 import UpdateClass from "../Dashboard/TeacherDashboard/UpdateClass";
 import AllClass from "../Pages/AllClasses/AllClass";
 import AllClasses from "../Dashboard/AdminDashboard/AllClasses";
+import ClassContext from "../Components/ClassContext/ClassContext";
+import Payment from "../Pages/Payment/Payment";
+
+
 
 
 
@@ -28,6 +32,7 @@ export const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+
       children: [
         {
             path: "/",
@@ -36,8 +41,15 @@ export const router = createBrowserRouter([
         },
         {
             path: "allclass",
-            element: <AllClass></AllClass>
+            element: <AllClass></AllClass>,
+            loader : () => fetch( 'http://localhost:5000/classes')
         },
+        {
+            path : "classDetails/:id",
+            element: <ClassContext></ClassContext>,
+            loader : ()=> fetch('http://localhost:5000/classes')
+        },
+        
         {
             path: "teach",
             element: <Teach></Teach>
@@ -107,7 +119,10 @@ export const router = createBrowserRouter([
                 path: "myenrollclass",
                 element: <MyEnrollClass></MyEnrollClass>
             },
-           
+            {
+                path: "payment",
+                element: <Payment></Payment>
+            }
         ]
     }
 ]);

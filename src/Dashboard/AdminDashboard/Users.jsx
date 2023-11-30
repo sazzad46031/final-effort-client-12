@@ -1,7 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import UseAxiosSecure from "../../Hooks/UseAxiosSecure";
-import { useContext } from "react";
-import { AuthContext } from "../../Providers/Authprovider";
+
 import Swal from "sweetalert2";
 
 
