@@ -37,17 +37,17 @@ export const router = createBrowserRouter([
         {
             path: "/",
             element: <Home></Home>,
-            loader: ()=> fetch('http://localhost:5000/classes')
+            loader: ()=> fetch('https://final-effort-server-dun.vercel.app/classes')
         },
         {
             path: "allclass",
             element: <AllClass></AllClass>,
-            loader : () => fetch( 'http://localhost:5000/classes')
+            loader : () => fetch( 'https://final-effort-server-dun.vercel.app/classes')
         },
         {
             path : "classDetails/:id",
             element: <ClassContext></ClassContext>,
-            loader : ()=> fetch('http://localhost:5000/classes')
+            loader : ()=> fetch('https://final-effort-server-dun.vercel.app/classes')
         },
         
         {
@@ -81,12 +81,12 @@ export const router = createBrowserRouter([
             {
                 path: "requests",
                 element: <TeacherRequest></TeacherRequest>,
-                loader: ()=> fetch('http://localhost:5000/requests')
+                loader: ()=> fetch('https://final-effort-server-dun.vercel.app/requests')
             },
             {
                 path: "allclasses",
                 element : <AllClasses></AllClasses>,
-                loader: ()=> fetch('http://localhost:5000/classes')
+                loader: ()=> fetch('https://final-effort-server-dun.vercel.app/classes')
             }
         ]
     },
@@ -101,12 +101,12 @@ export const router = createBrowserRouter([
             {
                 path: "myclass",
                 element: <MyClass></MyClass>,
-                loader: ()=> fetch('http://localhost:5000/classes')
+                loader: ()=> fetch('https://final-effort-server-dun.vercel.app/classes')
             },
             {
                 path : "updateclass/:id",
                 element: <UpdateClass></UpdateClass>,
-                loader : ({params}) => fetch(`http://localhost:5000/classes/${params.id}`)
+                loader : ({params}) => fetch(`https://final-effort-server-dun.vercel.app/classes/${params.id}`)
             },
             
         ]

@@ -24,6 +24,16 @@ const AdminDashboard = () => {
                     <li>
                         <NavLink to="/dashboard/student">Student Dashboard</NavLink>
                     </li>
+                    <hr></hr>
+                    <li>
+                        <NavLink to="/">Home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/allclass">All classes</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/teach">Teach on tutorio</NavLink>
+                    </li>
                 </ul>
             </div>
             <div className="flex-1">

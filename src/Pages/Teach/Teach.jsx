@@ -15,7 +15,7 @@ const Teach = () => {
         const image = form.image.value
         const newRequest = {title, name, image, experience, category}
         console.log(newRequest)
-        axios.post('http://localhost:5000/requests', newRequest)
+        axios.post('https://final-effort-server-dun.vercel.app/requests', newRequest)
         .then(res =>{
             console.log(res.data)
         })

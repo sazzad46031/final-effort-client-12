@@ -64,7 +64,7 @@ const Navbar = () => {
                             {role === 'admin' && <Link to="/dashboard/admin">Dashboard</Link>}
                             {role === 'teacher' && <Link to="/dashboard/teacher">Dashboard</Link>}
                             {role === 'student' && <Link to="/dashboard/student">Dashboard</Link>}
-                            {role === null && <Link to="/dashboard/student">Dashboard</Link>}
+                            {role === 'user' && <Link to="/dashboard/student">Dashboard</Link>}
                         </li>
                         <li><button onClick={handleLogout}>Logout</button></li>
                     </ul>

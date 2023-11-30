@@ -18,7 +18,7 @@ const AddClass = () => {
         const image = form.image.value
         const newClass = {title, name, email, price, description, image}
         console.log(newClass)
-        axios.post('http://localhost:5000/classes', newClass)
+        axios.post('https://final-effort-server-dun.vercel.app/classes', newClass)
         .then(res =>{
             console.log(res.data)
             navigate('/dashboard/teacher/myclass')
